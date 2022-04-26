@@ -33,7 +33,8 @@
 
                         <dl class="row">
                             <dt class="col-sm-8">
-                                @Html.EnumDropDownListFor(i => i.OrderState, "Select Order State", new { @class = "form-control" })
+                                @*@Html.EnumDropDownListFor(i => i.OrderState, "Select Order State", new { @class = "form-control" })*@
+                                <select class="form-control" asp-for="OrderState" asp-items="Html.GetEnumSelectList(typeof (OrderDetailsModel))"></select>
                             </dt>
                             <dd class="col-sm-4">
                                 <button type="submit" class="btn btn-primary">Update</button>
