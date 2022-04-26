@@ -90,3 +90,8 @@ D:\pragmateck\CardsShop\CardsShop\obj\Debug\netcoreapp3.1\Razor\Views\Cart\Index
 D:\pragmateck\CardsShop\CardsShop\obj\Debug\netcoreapp3.1\Razor\Views\Cart\Summary.cshtml.g.cs
 D:\pragmateck\CardsShop\CardsShop\obj\Debug\netcoreapp3.1\Razor\Views\Cart\Checkout.cshtml.g.cs
 D:\pragmateck\CardsShop\CardsShop\obj\Debug\netcoreapp3.1\Razor\Views\Cart\Completed.cshtml.g.cs
+D:\pragmateck\CardsShop\CardsShop\obj\Debug\netcoreapp3.1\Razor\Views\Account\Details.cshtml.g.cs
+D:\pragmateck\CardsShop\CardsShop\obj\Debug\netcoreapp3.1\Razor\Views\Account\Index.cshtml.g.cs
+D:\pragmateck\CardsShop\CardsShop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\SummaryPartial.cshtml.g.cs
+D:\pragmateck\CardsShop\CardsShop\obj\Debug\netcoreapp3.1\Razor\Views\Order\Details.cshtml.g.cs
+D:\pragmateck\CardsShop\CardsShop\obj\Debug\netcoreapp3.1\Razor\Views\Order\Index.cshtml.g.cs
