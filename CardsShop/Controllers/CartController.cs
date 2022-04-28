@@ -50,15 +50,17 @@ namespace CardsShop.Controllers
 
         public Cart GetCart()
         {
-            var cart = JsonConvert.DeserializeObject<Cart>(HttpContext.Session.GetString("Cart"));
+            //var cart = (Cart)Session["Cart"];
+            //// var cart = JsonConvert.DeserializeObject<Cart>(HttpContext.Session.GetString("Cart"));
 
-            if (cart == null)
-            {
-                cart = new Cart();
-               // Session["Cart"] = cart;
-            }
+            //if (cart == null)
+            //{
+            //    cart = new Cart();
+            //    HttpContext.Session.SetString("sdatestd","testin");
+            //}
 
-            return cart;
+            //return cart;
+            return new Cart();
         }
 
         public PartialViewResult Summary()

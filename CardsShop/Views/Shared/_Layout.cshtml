@@ -1,6 +1,5 @@
 ﻿@inject Microsoft.AspNetCore.Identity.UserManager<User>  userManager;
 
-
 @{
     User user = null;
     if (User.Identity.IsAuthenticated)
@@ -60,8 +59,7 @@
                         </div>
                     </div>
                 }
-
-               
+               @*<partial name="SummaryPartial"/>*@
             </div>
         </div>
     </nav>
