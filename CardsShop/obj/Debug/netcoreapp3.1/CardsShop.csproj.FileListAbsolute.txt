@@ -85,7 +85,6 @@ D:\pragmateck\CardsShop\CardsShop\obj\Debug\netcoreapp3.1\Razor\Views\Account\Lo
 D:\pragmateck\CardsShop\CardsShop\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 D:\pragmateck\CardsShop\CardsShop\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\pragmateck\CardsShop\CardsShop\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
-D:\pragmateck\CardsShop\CardsShop\bin\Debug\netcoreapp3.1\System.Web.Mvc.Extensions.dll
 D:\pragmateck\CardsShop\CardsShop\obj\Debug\netcoreapp3.1\Razor\Views\Cart\Index.cshtml.g.cs
 D:\pragmateck\CardsShop\CardsShop\obj\Debug\netcoreapp3.1\Razor\Views\Cart\Summary.cshtml.g.cs
 D:\pragmateck\CardsShop\CardsShop\obj\Debug\netcoreapp3.1\Razor\Views\Cart\Checkout.cshtml.g.cs

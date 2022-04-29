@@ -14,13 +14,15 @@ namespace CardsShop.Controllers
     public class CartController : Controller
     {
         private readonly DataContext db;
-        
+        public System.Web.HttpSessionStateBase Session { get; }
+
         public CartController(DataContext dataContext)
         {
             db = dataContext;
         }
         public IActionResult Index()
         {
+            
             return View(GetCart());
         }
 
@@ -50,17 +52,16 @@ namespace CardsShop.Controllers
 
         public Cart GetCart()
         {
-            //var cart = (Cart)Session["Cart"];
-            //// var cart = JsonConvert.DeserializeObject<Cart>(HttpContext.Session.GetString("Cart"));
+           //var cart = (Cart)Session["Cart"];
+            var cart = JsonConvert.DeserializeObject<Cart>(HttpContext.Session.GetString("Cart"));
 
-            //if (cart == null)
-            //{
-            //    cart = new Cart();
-            //    HttpContext.Session.SetString("sdatestd","testin");
-            //}
+            if (cart == null)
+            {
+                cart = new Cart();
+              //  Session["Cart"] = cart;
+            }
 
-            //return cart;
-            return new Cart();
+            return cart;
         }
 
         public PartialViewResult Summary()

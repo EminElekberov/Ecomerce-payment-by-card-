@@ -34,10 +34,16 @@ namespace CardsShop
             services.AddIdentity<User, IdentityRole>()
              .AddEntityFrameworkStores<DataContext>()
              .AddTokenProvider<DataProtectorTokenProvider<User>>(TokenOptions.DefaultProvider);
+
+
+            services.AddDistributedMemoryCache();
+
             //session ucun yazdigim
             services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromSeconds(3600);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
             });
         }
 

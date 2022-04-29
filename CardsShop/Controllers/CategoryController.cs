@@ -1,4 +1,5 @@
 ﻿using CardsShop.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -16,8 +17,10 @@ namespace CardsShop.Controllers
         {
             _dataContext = dataContext;
         }
-        public ActionResult Index()
+        public IActionResult Index()
         {
+            //HttpContext.Session.SetString("token", "values");
+            //HttpContext.Session.SetString("Name", "The Doctor");
             return View(_dataContext.Categories.ToList());
         }
 
