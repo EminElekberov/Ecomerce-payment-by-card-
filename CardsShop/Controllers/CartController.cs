@@ -14,7 +14,7 @@ namespace CardsShop.Controllers
     public class CartController : Controller
     {
         private readonly DataContext db;
-        public System.Web.HttpSessionStateBase Session { get; }
+        //public System.Web.HttpSessionStateBase Session { get; }
 
         public CartController(DataContext dataContext)
         {
