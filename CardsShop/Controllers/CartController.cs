@@ -22,22 +22,42 @@ namespace CardsShop.Controllers
         }
         public IActionResult Index()
         {
-            
             return View(GetCart());
         }
 
         public IActionResult AddToCart(int Id)
         {
+            List<Product> products;
             var product = db.Products.FirstOrDefault(i => i.Id == Id);
-
             if (product != null)
             {
                 GetCart().AddProduct(product, 1);
             }
-
+            string basketstr;
+            basketstr = HttpContext.Request.Cookies["Cart"];
+            if (basketstr==null)
+            {
+                products = new List<Product>();
+                products.Add(product);
+            }
+            else
+            {
+                products = JsonConvert.DeserializeObject<List<Product>>(basketstr);
+                products.Add(product);
+            }
+            string basket = JsonConvert.SerializeObject(products);
+            HttpContext.Response.Cookies.Append("Cart", basket);
+            //HttpContext.Session.SetString("Cart", product.Name);
+           // HttpContext.Response.Cookies.Append("Cart", product.Name);
             return RedirectToAction("Index");
         }
+        public IActionResult Showbasket()
+        {
+            string basketstr = HttpContext.Request.Cookies["Cart"];
+            List<Product> basketpr = JsonConvert.DeserializeObject<List<Product>>(basketstr);
 
+            return Json(basketpr);
+        }
         public IActionResult RemoveFromCart(int Id)
         {
             var product = db.Products.FirstOrDefault(i => i.Id == Id);
@@ -52,16 +72,19 @@ namespace CardsShop.Controllers
 
         public Cart GetCart()
         {
-           //var cart = (Cart)Session["Cart"];
-            var cart = JsonConvert.DeserializeObject<Cart>(HttpContext.Session.GetString("Cart"));
+            
+            //HttpSessionStateBase  bu klasdan gelmelidi Session
+            //HttpContext.Session.SetString("Cart",)
+            //var cart = (Cart)Session["Cart"];
+            //var cart = JsonConvert.DeserializeObject<Cart>(HttpContext.Session.GetString("Cart"));
 
-            if (cart == null)
-            {
-                cart = new Cart();
-              //  Session["Cart"] = cart;
-            }
+            //if (cart == null)
+            //{
+            //    cart = new Cart();
+            //    //Session["Cart"] = cart;
+            //}
 
-            return cart;
+            return new Cart();
         }
 
         public PartialViewResult Summary()
